@@ -57,7 +57,7 @@ function installation
 		echo -e '\n-->WPS Office over Flatpak\n'
 		flatpak install -y flathub com.wps.Office
 		echo -e '\n-->Any Desk over Flatpak\n'
-		flatpak install flathub com.anydesk.Anydesk
+		flatpak install -y flathub com.anydesk.Anydesk
 		hifile
 		webappmanager
 		goverlay
