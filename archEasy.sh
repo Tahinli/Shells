@@ -23,6 +23,10 @@ pacman -S bash-completion
 useradd -m -G whell tahinli
 #need to implement maybe passwd tahinli
 #need to implement uncomment wheel in visudo - EDITOR=nano visudo
+#AutoLogin
+mkdir -p /etc/sddm.conf.d/
+echo -e '#Edited by Tahinli\n[Autologin]\nUser=tahinli\nSession=plasma' | tee -a /etc/sddm.conf.d/autologin.conf
+##AutoLogin
 pacman -S plasma-desktop
 pacman -S htop
 pacman -S alacritty
