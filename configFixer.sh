@@ -18,11 +18,11 @@ read selection
 case $selection in
 1)
 	echo -e '	#Discrete Nvidia GPU as a Primary Selected\n'
-	echo -e '#This file is provided by xorg-x11-drv-nvidia\n#Edited by Tahinli\n\nSection "OutputClass"\n\tIdentifier "nvidia"\n\tMatchDriver "nvidia-drm"\n\tDriver "nvidia"\n\tOption "AllowEmptyInitialConfiguration"\n\tOption "SLI" "Auto"\n\tOption "BaseMosaic" "on"\n\tOption "PrimaryGPU" "yes"\nEndSection\n\nSection "ServerLayout"\n\tIdentifier "layout"\n\tOption "AllowNVIDIAGPUScreens"\n\tOption "PrimaryGPU" "yes"\n\tOption "Coolbits" "12"\nEndSection\n' | sudo tee /etc/X11/xorg.conf.d/nvidia.conf
+	echo -e '#This file is provided by xorg-x11-drv-nvidia\n#Edited by Tahinli\n\nSection "OutputClass"\n\tIdentifier "nvidia"\n\tMatchDriver "nvidia-drm"\n\tDriver "nvidia"\n\tOption "AllowEmptyInitialConfiguration"\n\tOption "SLI" "Auto"\n\tOption "BaseMosaic" "on"\n\tOption "PrimaryGPU" "yes"\n\tOption "Coolbits" "12"\nEndSection\n\nSection "ServerLayout"\n\tIdentifier "layout"\n\tOption "AllowNVIDIAGPUScreens"\n\tOption "PrimaryGPU" "yes"\nEndSection\n' | sudo tee /etc/X11/xorg.conf.d/nvidia.conf
 	;;
 2)
 	echo -e '	#Integrated GPU as a Primary Selected\n'
-	echo -e '#This file is provided by xorg-x11-drv-nvidia\n#Edited by Tahinli\n\nSection "OutputClass"\n\tIdentifier "nvidia"\n\tMatchDriver "nvidia-drm"\n\tDriver "nvidia"\n\tOption "AllowEmptyInitialConfiguration"\n\tOption "SLI" "Auto"\n\tOption "BaseMosaic" "on"\n\tOption "PrimaryGPU" "no"\nEndSection\n\nSection "ServerLayout"\n\tIdentifier "layout"\n\tOption "AllowNVIDIAGPUScreens"\n\tOption "PrimaryGPU" "no"\n\tOption "Coolbits" "12"\nEndSection\n' | sudo tee /etc/X11/xorg.conf.d/nvidia.conf
+	echo -e '#This file is provided by xorg-x11-drv-nvidia\n#Edited by Tahinli\n\nSection "OutputClass"\n\tIdentifier "nvidia"\n\tMatchDriver "nvidia-drm"\n\tDriver "nvidia"\n\tOption "AllowEmptyInitialConfiguration"\n\tOption "SLI" "Auto"\n\tOption "BaseMosaic" "on"\n\tOption "PrimaryGPU" "no"\n\tOption "Coolbits" "12"\nEndSection\n\nSection "ServerLayout"\n\tIdentifier "layout"\n\tOption "AllowNVIDIAGPUScreens"\n\tOption "PrimaryGPU" "no"\nEndSection\n' | sudo tee /etc/X11/xorg.conf.d/nvidia.conf
 	;;
 3)
 	echo -e '	#Alsa Headset Detectetion Fix Selected\n'
