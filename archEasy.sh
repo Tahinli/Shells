@@ -5,6 +5,7 @@ hwclock --systohc
 #need to implement edition of  locale.gen
 #locale-gen
 echo LANG=en_GB.UTF-8 > /etc/locale.conf
+#do not forget en US also, because of steam
 echo tArch > /etc/hostname
 echo -e '127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\ttArch' | tee -a /etc/hosts
 #need to implement edition of /etc/pacman.conf to parallel download
@@ -37,7 +38,9 @@ pacman -S neofetch
 pacman -S xorg
 pacman -S firefox
 pacman -S plasma-pa
-pacman -S alsa
+pacman -S plasma-nm
+pacman -S man-pages
+pacman -S noto-fonts-emoji
 ##Add Nvidia Hook
 pacman -S nvidia-dkms
 pacman -S nvidia-settings
@@ -103,4 +106,13 @@ pacman -S obs-studio
 pacman -S vlc
 pacman -S cronie
 systemctl enable cronie
+#KDE Customization
+pacman -S kde-gtk-config
+pacman -S breeze-gtk
+##KDE Customization
+#Bluetooth
+pacman -S bluez
+pacman -S bluez-utils
+pacman -S bluedevil
+##Bluetooth
 #wget hifile dont forget
