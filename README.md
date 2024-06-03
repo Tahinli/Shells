@@ -59,3 +59,10 @@
   >--chad.sh
 
     | It's a script that let user to select between wayland and x11 easily.
+
+
+
+  >--isAlive.sh
+
+    | It's working with fping
+    | It's a script for pinging whole IP block.
