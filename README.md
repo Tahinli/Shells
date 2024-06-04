@@ -58,7 +58,7 @@
 
   >--chad.sh
 
-    | It's a script that let user to select between wayland and x11 easily.
+    | It's a script that let user to select between wayland and x11 easily for autologin in lightdm.
 
 
 
