@@ -72,3 +72,9 @@
   >--fishFedora.sh
 
     | It's a script for installing fish terminal and configuring it.
+    
+
+
+  >--bloatFreeKDE.sh
+
+    | It's a script for installing KDE in Fedora without unnecessary things.
