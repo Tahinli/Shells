@@ -78,3 +78,9 @@
   >--bloatFreeKDE.sh
 
     | It's a script for installing KDE in Fedora without unnecessary things.
+
+
+
+  >--archSound.sh
+
+    | It's script for make sound work
