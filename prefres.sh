@@ -1,10 +1,10 @@
 echo -e "\n<--##Tahinli Resolution Script##-->\n"
-echo "  1- Join- Second_Vertical"
-echo "  2- Join- Linear_Extended"
-echo "  3- Mirror"
-echo "  4- First Monitor Only"
-echo "  5- Second Monitor Only"
-echo -e "  6- Second Monitor Only-Vertical\n"
+echo "   1- Join- Second_Vertical"
+echo "   2- Join- Linear_Extended"
+echo "   3- Mirror"
+echo "   4- First Monitor Only"
+echo "   5- Second Monitor Only"
+echo "   6- Seconf Monitor Only-Vertical"
 read selection
 if [[ $selection > 0 ]] && [[ $selection < 7 ]];
 then

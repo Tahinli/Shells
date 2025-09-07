@@ -34,26 +34,57 @@ function installation
 		yes | sudo pacman -S discord
 		echo -e '\n-->Code\n'
 		yes | sudo pacman -S code
-		echo -e '\n-->QT5Libs\n'
-		yes | sudo pacman -S qt5-base
-		yes | sudo pacman -S qt5pas
 		echo -e '\n--->Github Desktop over Flatpak\n'
 		flatpak install -y io.github.shiftey.Desktop
 		echo -e '\n-->Spotify over Flatpak\n'
         flatpak install -y flathub com.spotify.Client
 		echo -e '\n--Motrix over Flatpak\n'
 		flatpak install -y motrix
+		echo -e '\n-->HiFile over Net\n'
+		hifile
+		webappmanager
+		goverlay
+		debtap
 	}
 
-function overNet
+function debtap
 	{
-		echo -e '\n	We are going to try to download softwares from Internet\n'
+		mkdir ~/debtap
+		git clone https://github.com/helixarch/debtap.git ~/debtap/
+		(cd ~/debtap/ ; sudo ./debtap -u)
+	}
+
+	function webappmanager
+	{
+		echo -e '\n-->WebAppManager\n'
+		#Web App Requeriments
+		yes | sudo pacman -S python
+		yes | sudo pacman -S python-setproctitle
+		yes | sudo pacman -S python-pip
+		pip install tldextract
+		pip install pillow
+		yes | sudo pacman -S gtk3
+		mkdir ~/tTemp
+		git clone https://github.com/linuxmint/webapp-manager.git ~/tTemp/
+		(cd ~/tTemp/ ; PID=$! | ./test)
+		kill -INT $PID
+		sudo rm -r ~/tTemp
+	}
+
+function goverlay
+	{
 		echo -e '\n-->GOverlay\n'
+		#Goverlay Requeriments
+		yes | sudo pacman -S qt5-base
+		yes | sudo pacman -S qt5pas
 		mkdir ~/GOverlay
 		wget -O GOVERLAY_T.tar.xz https://github.com/benjamimgois/goverlay/releases/download/0.9/goverlay_0_9.tar.xz
 		tar xf GOVERLAY_T.tar.xz -C  ~/GOverlay
 		rm -r GOVERLAY_T.tar.xz
 		sudo chmod +x ~/GOverlay/start_goverlay.sh
+	}
+function hifile
+	{
 		echo -e '\n-->HiFile\n'
 		wget -O HiFile.AppImage https://www.hifile.app/api/v1/download?system=linux-appimage
 		chmod +x HiFile.AppImage
@@ -74,8 +105,8 @@ case $selection in
 2)
 	echo -e '	-|Installation Selected\n'
 	installation
-	overNet
 	;;
+3) webappmanager;;
 *)
 	echo -e '	**\Invalid Selection\**\n	Quiting'
 	;;
