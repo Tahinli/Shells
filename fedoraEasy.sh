@@ -31,6 +31,12 @@ function kernelCheck
 		echo -e '\n-->Kernel Update Selected\n Checking...\n'
 		sudo dnf update -y
 	}
+function cleaning
+	{
+		echo -e '\n-->Cleaning Selected\n'
+		sudo dnf autoremove -y
+		sudo dnf clean all -y
+	}
 function installation
 	{
 		echo -e '\n Installation Selected\n Starting...\n'
@@ -68,7 +74,7 @@ function restartSelection
 			;;
 		esac
 	}
-echo -e '0) Kernel Uptade Check\n1) Hands Free Complete Setup\n2) Only Fix Config Files\n3) Only Speed Up DNF\n4) Only Activate RPM-Fusion Repos\n5) Only Add Additional Repos\n6) Only Install Programs'
+echo -e '0) Kernel Uptade Check\n1) Hands Free Complete Setup\n2) Only Fix Config Files\n3) Only Speed Up DNF\n4) Only Activate RPM-Fusion Repos\n5) Only Add Additional Repos\n6) Only Install Programs\n7) Only Cleaning'
 read selection
 case $selection in
 	0)
@@ -80,6 +86,7 @@ case $selection in
 		additionalRepo
 		configFix
 		installation
+		cleaning
 		;;
 	2)
 		configFix
@@ -96,9 +103,11 @@ case $selection in
 	6)
 		installation
 		;;
+	7)
+		cleaning
+		;;
 	*)
 		echo -e '	-# Invalid Selection #-\n		QUITING'
 		;;
 esac
-sudo dnf autoremove -y
 restartSelection
