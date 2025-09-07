@@ -1,5 +1,5 @@
 # Bashes
-#-They Are My Utility Scripts-#
+#-They're My Utility Scripts-#
 
 
 
