@@ -42,10 +42,12 @@ function installation
 		yes | sudo pacman -S audacity
 		echo -e '\n-->Kdenlive\n'
 		yes | sudo pacman -S kdenlive
+		echo -e '\n-->YT-DLP\n'
+		yes | sudo pacman -S yt-dlp
 		echo -e '\n--->Github Desktop over Flatpak\n'
 		flatpak install -y io.github.shiftey.Desktop
 		echo -e '\n-->Spotify over Flatpak\n'
-        flatpak install -y flathub com.spotify.Client
+        	flatpak install -y flathub com.spotify.Client
 		echo -e '\n-->Motrix over Flatpak\n'
 		flatpak install -y motrix
 		echo -e '\n-->GPU Screen Recorder over Flatpak\n'
