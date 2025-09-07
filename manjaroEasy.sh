@@ -30,6 +30,10 @@ function installation
 		yes | sudo pacman -S git
 		echo -e '\n-->Alacritty\n'
 		yes | sudo pacman -S alacritty
+		echo -e '\n-->Discord\n'
+		yes | sudo pacman -S discord
+		echo -e '\n-->Code\n'
+		yes | sudo pacman -S code
 		echo -e '\n--->Github Desktop over Flatpak\n'
 		flatpak install -y io.github.shiftey.Desktop
 		echo -e '\n-->Spotify over Flatpak\n'
@@ -50,6 +54,7 @@ function overNet
 		echo -e '\n-->HiFile\n'
 		wget -O HiFile.AppImage https://www.hifile.app/api/v1/download?system=linux-appimage
 		chmod +x HiFile.AppImage
+		mkdir ~/.local/share/applications
 		yes | sudo mv HiFile.AppImage ~/.local/share/applications/
 		echo -e '\n~/.local/share/applications/HiFile.AppImage' | sudo tee /bin/hifile
 		sudo chmod +x /bin/hifile
