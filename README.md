@@ -46,3 +46,9 @@
     | It's a script that easy installation for my needs in manaro, do not use this with root priviliges.
     | It's working with pacman and tee in basic.
     | It also downloads wget, git, pip for installations that is needed by me.
+
+
+
+  >--ytDownloader.sh
+    | It's working with yt-dlp
+    | It's basic script for downloading best quality mp4 and mp3 easy way.
