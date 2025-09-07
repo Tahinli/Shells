@@ -79,8 +79,8 @@ case $selection in
 		fastDNF
 		rpmFusion
 		additionalRepo
-		installation
 		configFix
+		installation
 		;;
 	2)
 		configFix
