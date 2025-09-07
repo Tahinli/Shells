@@ -49,7 +49,7 @@
 
 
 
-  >--ytDownloader.sh
+  >--vDownloader.sh
 
     | It's working with yt-dlp
     | It's basic script for downloading best quality mp4 and mp3 easy way.
