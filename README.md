@@ -29,7 +29,7 @@
   >--configFixer.sh
   
   
-    | It's a script for selection Nvidia GPU as a primary and Alsa headset recognization fixer for my needs.
+    | It's a script for selection Nvidia GPU as a primary and Alsa headset recognition fixer for my needs.
     | It's working with 'tee'
     
     
@@ -43,7 +43,7 @@
 
   >--manjaroEasy.sh
   
-    | It's a script that easy installation for my needs in Manjaro, do not use this with root priviliges.
+    | It's a script that easy installation for my needs in Manjaro, do not use this with root privileges.
     | It's working with pacman and tee in basic.
     | It also downloads wget, git, pip for installations that is needed by me.
 
