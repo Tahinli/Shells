@@ -4,20 +4,19 @@ echo '	---> Tahinli Fedora Easy Ready Script <---'
 function fastDNF
 	{
 		echo -e 'Fast DNF Selected\n'
-		echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
-		echo 'fastestmirror=TRUE' | sudo tee -a /etc/dnf/dnf.conf
+		echo -e '# see `man dnf.conf` for defaults and possible options\n#Edited by Tahinli\n\n[main]\ngpgcheck=True\ninstallonly_limit=3\nclean_requirements_on_remove=True\nbest=False\nskip_if_unavailable=True\nmax_parallel_downloads=10\nfastestmirror=TRUE' | sudo tee /etc/dnf/dnf.conf
 	}
 function rpmFusion
 	{
 		echo -e 'RPM-Fusion Selected\n'
-		sudo dnf install --allowerasing https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+		sudo dnf install -y --allowerasing https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 	}
 function additionalRepo
 	{
 		echo -e 'Additional Repo Selected\n'
-		sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+		sudo rpm --import -y https://packages.microsoft.com/keys/microsoft.asc
 		sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-		sudo rpm --import https://packagecloud.io/shiftkey/desktop/gpgkey
+		sudo rpm --import -y https://packagecloud.io/shiftkey/desktop/gpgkey
 		sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://packagecloud.io/shiftkey/desktop/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/shiftkey/desktop/gpgkey" > /etc/yum.repos.d/shiftkey-desktop.repo'
 		sudo dnf check-update
 	}
