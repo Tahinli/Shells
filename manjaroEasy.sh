@@ -34,6 +34,12 @@ function installation
 		yes | sudo pacman -S discord
 		echo -e '\n-->Code\n'
 		yes | sudo pacman -S code
+		echo -e '\n-->PKG Config\n'
+		yes | sudo pacman -S pkgconfig
+		echo -e '\n-->Remmina\n'
+		yes | sudo pacman -S remmina
+		echo -e '\n-->Audacity\n'
+		yes | sudo pacman -S audacity
 		echo -e '\n--->Github Desktop over Flatpak\n'
 		flatpak install -y io.github.shiftey.Desktop
 		echo -e '\n-->Spotify over Flatpak\n'
@@ -42,6 +48,8 @@ function installation
 		flatpak install -y motrix
 		echo -e '\n-->GPU Screen Recorder over Flatpak\n'
 		flatpak install -y flathub com.dec05eba.gpu_screen_recorder
+		echo -e '\n-->WPS Office over Flatpak\n'
+		flatpak install -y flathub com.wps.Office
 		hifile
 		webappmanager
 		goverlay
@@ -67,8 +75,7 @@ function debtap
 		yes | sudo pacman -S gtk3
 		mkdir ~/tTemp
 		git clone https://github.com/linuxmint/webapp-manager.git ~/tTemp/
-		(cd ~/tTemp/ ; PID=$! | ./test)
-		kill -INT $PID
+		$(cd ~/tTemp/ ; ./test)
 		sudo rm -r ~/tTemp
 	}
 
@@ -91,7 +98,7 @@ function hifile
 		chmod +x HiFile.AppImage
 		mkdir ~/.local/share/applications
 		yes | sudo mv HiFile.AppImage ~/.local/share/applications/
-		echo -e '\n~/.local/share/applications/HiFile.AppImage' | sudo tee /bin/hifile
+		echo -e "\n/home/$USER/.local/share/applications/HiFile.AppImage" | sudo tee /bin/hifile
 		sudo chmod +x /bin/hifile
 	}
 
@@ -108,6 +115,7 @@ case $selection in
 	installation
 	;;
 3) webappmanager;;
+4) hifile;;
 *)
 	echo -e '	**\Invalid Selection\**\n	Quiting'
 	;;
