@@ -18,6 +18,7 @@ function additionalRepo
 		sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 		sudo rpm --import https://packagecloud.io/shiftkey/desktop/gpgkey
 		sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://packagecloud.io/shiftkey/desktop/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/shiftkey/desktop/gpgkey" > /etc/yum.repos.d/shiftkey-desktop.repo'
+		sudo dnf -y copr enable refi64/webapp-manager
 		sudo dnf check-update
 	}
 function configFix
@@ -56,6 +57,7 @@ function installation
 		sudo dnf install -y --allowerasing audacity
 		sudo dnf install -y --allowerasing lutris
 		sudo dnf install -y --allowerasing timeshift
+		sudo dnf install -y --allowerasing webapp-manager
 		sudo dnf install -y --allowerasing lpf-spotify-client
 		lpf update
 		echo -e '	-< Installation is Done, Please Restart >-'
