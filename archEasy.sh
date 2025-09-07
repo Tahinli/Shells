@@ -19,6 +19,7 @@ pacman -S efibootmgr
 pacman -S grub-btrfs
 pacman -S btrfs-progs
 pacman -S snap-pac
+pacman -S inotify-tools
 grub-install --target=x86_64-efi --efi-directory=/boot/efi
 #grub-mkconfig -o /boot/grub/grub.cfg
 pacman -S sddm
