@@ -53,3 +53,9 @@
 
     | It's working with yt-dlp
     | It's basic script for downloading best quality mp4 and mp3 in easy way.
+
+
+
+  >--chad.sh
+
+    | It's a script that let user to select between wayland and x11 easily.
