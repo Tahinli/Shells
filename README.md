@@ -4,7 +4,7 @@
 
 
 
-  >--prefres.sh--<
+  >--prefres.sh--
   
   
     | It's a script for screen settings that is specified for my needs.
