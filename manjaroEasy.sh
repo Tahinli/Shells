@@ -34,6 +34,9 @@ function installation
 		yes | sudo pacman -S discord
 		echo -e '\n-->Code\n'
 		yes | sudo pacman -S code
+		echo -e '\n-->QT5Libs\n'
+		yes | sudo pacman -S qt5-base
+		yes | sudo pacman -S qt5pas
 		echo -e '\n--->Github Desktop over Flatpak\n'
 		flatpak install -y io.github.shiftey.Desktop
 		echo -e '\n-->Spotify over Flatpak\n'
