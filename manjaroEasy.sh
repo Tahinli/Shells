@@ -40,6 +40,8 @@ function installation
 		yes | sudo pacman -S remmina
 		echo -e '\n-->Audacity\n'
 		yes | sudo pacman -S audacity
+		echo -e '\n-->Kdenlive\n'
+		yes | sudo pacman -S kdenlive
 		echo -e '\n--->Github Desktop over Flatpak\n'
 		flatpak install -y io.github.shiftey.Desktop
 		echo -e '\n-->Spotify over Flatpak\n'
