@@ -4,7 +4,7 @@ echo '	---> Tahinli Fedora Easy Ready Script <---'
 function fastDNF
 	{
 		echo -e '\n-->Fast DNF Selected\n'
-		echo -e '# see `man dnf.conf` for defaults and possible options\n#Edited by Tahinli\n\n[main]\ngpgcheck=True\ninstallonly_limit=3\nclean_requirements_on_remove=True\nbest=False\nskip_if_unavailable=True\nmax_parallel_downloads=10\nfastestmirror=TRUE' | sudo tee /etc/dnf/dnf.conf
+		echo -e '# see `man dnf.conf` for defaults and possible options\n#Edited by Tahinli\n\n[main]\ngpgcheck=True\ninstallonly_limit=3\nclean_requirements_on_remove=True\nbest=False\nskip_if_unavailable=True\nmax_parallel_downloads=10\nfastestmirror=TRUE\ndefaultyes=TRUE' | sudo tee /etc/dnf/dnf.conf
 	}
 function rpmFusion
 	{
