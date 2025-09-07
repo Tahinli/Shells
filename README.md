@@ -66,3 +66,9 @@
 
     | It's working with fping
     | It's a script for pinging whole IP block.
+
+
+
+  >--fishFedora.sh
+
+    | It's a script for installing fish terminal and configuring it.
