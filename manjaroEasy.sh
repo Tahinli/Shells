@@ -46,6 +46,8 @@ function installation
 		yes | sudo pacman -S kdenlive
 		echo -e '\n-->YT-DLP\n'
 		yes | sudo pacman -S yt-dlp
+		echo -e '\n-->Pinta'
+                yes | sudo pacman -S pinta
 		echo -e '\n--->Github Desktop over Flatpak\n'
 		flatpak install -y io.github.shiftey.Desktop
 		echo -e '\n-->Spotify over Flatpak\n'
