@@ -25,3 +25,11 @@
     | It's working with 'tee' and 'dnf'
     
     
+    
+  >--configFixer.sh
+  
+  
+    | It's a script for selection Nvidia GPU as a primary and Alsa headset recognization fixer for my needs.
+    | It's working with 'tee'
+    
+    
