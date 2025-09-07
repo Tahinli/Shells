@@ -38,9 +38,10 @@ function installation
 		flatpak install -y io.github.shiftey.Desktop
 		echo -e '\n-->Spotify over Flatpak\n'
         flatpak install -y flathub com.spotify.Client
-		echo -e '\n--Motrix over Flatpak\n'
+		echo -e '\n-->Motrix over Flatpak\n'
 		flatpak install -y motrix
-		echo -e '\n-->HiFile over Net\n'
+		echo -e '\n-->GPU Screen Recorder over Flatpak\n'
+		flatpak install -y flathub com.dec05eba.gpu_screen_recorder
 		hifile
 		webappmanager
 		goverlay
