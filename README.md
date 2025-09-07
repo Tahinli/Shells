@@ -33,3 +33,9 @@
     | It's working with 'tee'
     
     
+    
+  >--gnomeCustomization.sh
+  
+  
+    | It's a script for my gnome customizations, basic things like showing seconds and windows preferences.
+    
