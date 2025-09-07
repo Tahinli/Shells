@@ -1,4 +1,4 @@
-echo -e 'Gimme link'
+echo -e 'Give a link'
 read selection
 echo -e 'What do you want from video\n\t1) Best MP4\n\t2) Best MP3\n\t3) Both'
 read menu
