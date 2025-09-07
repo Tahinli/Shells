@@ -24,7 +24,8 @@ function additionalRepo
 function configFix
 	{
 		echo -e 'Config Fix Selected\n'
-		echo 'options snd-hda-intel index=0 model=dell-headset-multi' | sudo tee -a /etc/modprobe.d/alsa-base.conf
+		echo 'options snd-hda-intel index=0 model=dell-headset-multi' | sudo tee /etc/modprobe.d/alsa-base.conf
+		echo -e '#This file is provided by xorg-x11-drv-nvidia\n#Edited by Tahinli\n\nSection "OutputClass"\n\tIdentifier "nvidia"\n\tMatchDriver "nvidia-drm"\n\tDriver "nvidia"\n\tOption "AllowEmptyInitialConfiguration"\n\tOption "SLI" "Auto"\n\tOption "BaseMosaic" "on"\n\tOption "PrimaryGPU" "yes"\nEndSection\n\nSection "ServerLayout"\n\tIdentifier "layout"\n\tOption "AllowNVIDIAGPUScreens"\n\tOption "PrimaryGPU" "yes"\nEndSection\n' | sudo tee /etc/X11/xorg.conf.d/nvidia.conf
 	}
 function kernelCheck
 	{
@@ -39,6 +40,7 @@ function installation
 		sudo dnf install -y --allowerasing github-desktop
 		sudo dnf install -y --allowerasing discord
 		sudo dnf install -y --allowerasing steam
+		sudo dnf install -y --allowerasing gamemode
 		sudo dnf install -y --allowerasing akmod-nvidia
 		sudo dnf install -y --allowerasing xorg-x11-drv-nvidia-cuda
 		sudo dnf install -y --allowerasing neofetch
