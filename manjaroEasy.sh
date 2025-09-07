@@ -30,6 +30,8 @@ function installation
 		yes | sudo pacman -S git
 		echo -e '\n-->Alacritty\n'
 		yes | sudo pacman -S alacritty
+		echo -e '\n-->Tilda\n'
+		yes | sudo pacman -S tilda
 		echo -e '\n-->Discord\n'
 		yes | sudo pacman -S discord
 		echo -e '\n-->Code\n'
