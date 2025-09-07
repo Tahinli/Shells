@@ -59,7 +59,7 @@ function installation
 		echo -e '\n-->Any Desk over Flatpak\n'
 		flatpak install -y flathub com.anydesk.Anydesk
 		echo -e '\n-->Green with Envy over Flatpak\n'
-    	flatpak install -y com.leinardi.gwe
+	    	flatpak install -y com.leinardi.gwe
 		echo -e '\n»»»Wget Sequence\n'
 		hifile
 		webappmanager
