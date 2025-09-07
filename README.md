@@ -39,3 +39,10 @@
   
     | It's a script for my gnome customizations, basic things like showing seconds and windows preferences.
     
+
+
+  >--manjaroEasy.sh
+  
+    | It's a script that easy installation for my needs in manaro, do not use this with root priviliges.
+    | It's working with pacman and tee in basic.
+    | It also downloads wget, git, pip for installations that is needed by me.
