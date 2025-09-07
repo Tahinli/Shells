@@ -84,3 +84,9 @@
   >--archSound.sh
 
     | It's script for make sound work
+
+
+
+  >--archEasy.sh
+
+    | It's a script for automate Arch installation.
