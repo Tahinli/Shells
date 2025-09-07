@@ -3,32 +3,32 @@ echo '	---> Tahinli Fedora Easy Ready Script <---'
 
 function fastDNF
 	{
-		echo -e 'Fast DNF Selected\n'
+		echo -e '\n-->Fast DNF Selected\n'
 		echo -e '# see `man dnf.conf` for defaults and possible options\n#Edited by Tahinli\n\n[main]\ngpgcheck=True\ninstallonly_limit=3\nclean_requirements_on_remove=True\nbest=False\nskip_if_unavailable=True\nmax_parallel_downloads=10\nfastestmirror=TRUE' | sudo tee /etc/dnf/dnf.conf
 	}
 function rpmFusion
 	{
-		echo -e 'RPM-Fusion Selected\n'
+		echo -e '\n-->RPM-Fusion Selected\n'
 		sudo dnf install -y --allowerasing https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 	}
 function additionalRepo
 	{
-		echo -e 'Additional Repo Selected\n'
-		sudo rpm --import -y https://packages.microsoft.com/keys/microsoft.asc
+		echo -e '\n-->Additional Repo Selected\n'
+		$yes | sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 		sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-		sudo rpm --import -y https://packagecloud.io/shiftkey/desktop/gpgkey
+		$yes | sudo rpm --import https://packagecloud.io/shiftkey/desktop/gpgkey
 		sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://packagecloud.io/shiftkey/desktop/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/shiftkey/desktop/gpgkey" > /etc/yum.repos.d/shiftkey-desktop.repo'
 		sudo dnf check-update
 	}
 function configFix
 	{
-		echo -e 'Config Fix Selected\n'
+		echo -e '\n-->Config Fix Selected\n'
 		echo 'options snd-hda-intel index=0 model=dell-headset-multi' | sudo tee /etc/modprobe.d/alsa-base.conf
 		echo -e '#This file is provided by xorg-x11-drv-nvidia\n#Edited by Tahinli\n\nSection "OutputClass"\n\tIdentifier "nvidia"\n\tMatchDriver "nvidia-drm"\n\tDriver "nvidia"\n\tOption "AllowEmptyInitialConfiguration"\n\tOption "SLI" "Auto"\n\tOption "BaseMosaic" "on"\n\tOption "PrimaryGPU" "yes"\nEndSection\n\nSection "ServerLayout"\n\tIdentifier "layout"\n\tOption "AllowNVIDIAGPUScreens"\n\tOption "PrimaryGPU" "yes"\nEndSection\n' | sudo tee /etc/X11/xorg.conf.d/nvidia.conf
 	}
 function kernelCheck
 	{
-		echo -e '\nKernel Update Selected\n Checking...\n'
+		echo -e '\n-->Kernel Update Selected\n Checking...\n'
 		sudo dnf update -y
 	}
 function installation
