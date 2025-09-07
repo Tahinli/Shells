@@ -41,6 +41,8 @@ function installation
 		sudo dnf install -y --allowerasing discord
 		sudo dnf install -y --allowerasing steam
 		sudo dnf install -y --allowerasing gamemode
+		sudo dnf install -y --allowerasing mangohud
+		sudo dnf install -y --allowerasing goverlay
 		sudo dnf install -y --allowerasing akmod-nvidia
 		sudo dnf install -y --allowerasing xorg-x11-drv-nvidia-cuda
 		sudo dnf install -y --allowerasing neofetch
